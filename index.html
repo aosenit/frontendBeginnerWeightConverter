@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>weightConverterApp</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="body">
+    <div class="container">
+      <div class="card dark">
+        <div class="theme">L</div>
+        <h4>Enter a value in grams</h4>
+        <input type="number" id="input" />
+        <div class="selectSection">
+          <span>Convert to:</span>
+          <select name="" id="select">
+            <option value="mg">milligrams</option>
+            <option value="kg">Kilograms</option>
+            <option value="t">Tonnes</option>
+          </select>
+        </div>
+        <button id="convertBtn">Convert</button>
+        <h5>
+          <span id="outputGram">150</span>grams =
+          <span id="outputNew">0.15kg</span>
+        </h5>
+      </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
