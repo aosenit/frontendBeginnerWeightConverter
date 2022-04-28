@@ -10,6 +10,14 @@ let logicValue;
 button.addEventListener("click", convertFromGram);
 theme.addEventListener("click", themeChange);
 
+let setTheme;
+const moon = `<i class='bx bxs-moon'></i>`;
+const sun = `<i class='bx bx-sun'></i>`;
+
+setTheme = localStorage.getItem("theme");
+
+window.addEventListener("load", themeChange);
+
 function convertFromGram() {
   outputGram.innerHTML = input.value;
   if (select.value == "mg") {
@@ -27,16 +35,18 @@ function convertFromGram() {
 }
 
 function changeThemeInnerHTML() {
-  if (card.classList.contains("light")) {
-    theme.innerHTML = "L";
+  if (setTheme == "dark") {
+    setTheme = "light";
+    theme.innerHTML = sun;
   } else {
-    theme.innerHTML = "D";
+    setTheme = "dark";
+    theme.innerHTML = moon;
   }
 }
 
-changeThemeInnerHTML();
-
 function themeChange() {
-  card.classList.toggle("light");
+  card.classList.remove(card.classList[1]);
+  card.classList.add(setTheme);
+  localStorage.setItem("theme", setTheme);
   changeThemeInnerHTML();
 }

@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --backColor: rgb(19, 2, 36);
+  --fontColor: #fff;
+}
+
 body {
   background-color: rgb(17, 60, 139);
   font-family: "Courier New", Courier, monospace;
@@ -64,11 +69,11 @@ option {
 }
 
 .dark {
-  background-color: rgb(19, 2, 36);
-  color: white;
+  background-color: var(--backColor);
+  color: var(--fontColor);
 }
 
 .light {
-  background-color: white;
-  color: rgb(19, 2, 36);
+  background-color: var(--fontColor);
+  color: var(--backColor);
 }
