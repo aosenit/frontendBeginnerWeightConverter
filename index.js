@@ -14,9 +14,12 @@ let setTheme;
 const moon = `<i class='bx bxs-moon'></i>`;
 const sun = `<i class='bx bx-sun'></i>`;
 
-setTheme = localStorage.getItem("theme");
+window.addEventListener("load", loadWindow);
 
-window.addEventListener("load", themeChange);
+function loadWindow() {
+  setTheme = localStorage.getItem("theme") || "dark";
+  themeChange();
+}
 
 function convertFromGram() {
   outputGram.innerHTML = input.value;
